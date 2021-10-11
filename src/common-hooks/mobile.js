@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
+// Use to check if the device is mobile or desktop based on width
+
 export const Mobile = () => {
   const [width, setWidth] = useState();
 

@@ -12,4 +12,40 @@
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
   }
+  .movie_details {
+    text-align: center;
+    .language {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      // transform: translate(10%, -1070%);
+      width: fit-content;
+      background-color: #fff;
+      border-radius: 4px;
+      span {
+        padding: 12px 8px;
+        color: #191919;
+        text-transform: uppercase;
+      }
+    }
+    .movie_title {
+      padding: 8px 4px;
+      span {
+        font-weight: 600;
+      }
+    }
+    .rating {
+      margin-bottom: 8px;
+      .rating_value {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+    .year {
+      span {
+        color: #917aeb;
+      }
+    }
+  }
 }

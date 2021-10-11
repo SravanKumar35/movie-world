@@ -16,6 +16,7 @@ const Banner = ({ movie }) => {
             : "/poster.png"
         }
       />
+
       <div className={styles.details}>
         <div className={styles.movie_title}>
           <span>{movie?.title}</span>
@@ -30,7 +31,9 @@ const Banner = ({ movie }) => {
             precision={0.1}
             emptyIcon={<Star style={{ color: "#c0c0c0" }} fontSize="inherit" />}
           />
-          <span>{movie?.vote_average / 2}/5</span>
+          <span className={styles.rating_value}>
+            {movie?.vote_average / 2}/5
+          </span>
         </div>
         <div className={styles.language}>
           <span>{languages[movie?.original_language]}</span>

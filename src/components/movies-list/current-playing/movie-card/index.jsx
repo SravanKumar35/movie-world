@@ -19,6 +19,7 @@ const MovieCard = ({ movie }) => {
               : "/placeholder.png"
           }
         />
+
         <div className={styles.movie_details}>
           <div className={styles.rating}>
             <Rating
@@ -33,9 +34,11 @@ const MovieCard = ({ movie }) => {
               }
             />
           </div>
+
           <div className={styles.rating_value}>
             <span>{movie?.vote_average / 2}/5</span>
           </div>
+
           <div className={styles.movie_title}>
             <span>{movie?.title}</span>
             <span> ( {movie?.release_date?.slice(0, 4)}</span>

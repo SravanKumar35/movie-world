@@ -18,5 +18,25 @@
         width: 200px;
       }
     }
+    .movie_title {
+      margin-bottom: 4px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .rating {
+      align-items: center;
+      .rating_value {
+        position: absolute;
+        bottom: 48px;
+        margin-left: 4px;
+        font-size: 14px;
+      }
+    }
+    .language {
+      margin-top: 4px;
+    }
+    .year {
+      margin-top: 4px;
+    }
   }
 }

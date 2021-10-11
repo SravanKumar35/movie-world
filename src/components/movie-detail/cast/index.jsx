@@ -4,7 +4,9 @@ import { castHook } from "./hooks";
 import styles from "./styles.module.scss";
 
 const Cast = ({ id, movie }) => {
+  // castHook handles all the logic
   const { cast } = castHook(id);
+
   return (
     <div className={styles.main}>
       <h3>CAST</h3>

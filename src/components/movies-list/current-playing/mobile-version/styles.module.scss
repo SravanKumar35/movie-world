@@ -1,3 +1,76 @@
 .slider_item {
   text-align: center;
 }
+
+.nav_container {
+  display: flex;
+}
+
+.dots {
+  display: inline-block;
+  padding: 0;
+  border-radius: 40px;
+  width: 100%;
+  text-align: center;
+  margin-top: -2px;
+}
+
+.dots li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 1px;
+  padding: 0;
+}
+
+.dots li button {
+  border: none;
+  background: #d6d6d6;
+  color: transparent;
+  cursor: pointer;
+  border-radius: 7.5px;
+  padding: 3px;
+  height: 6px;
+  width: 1px;
+}
+
+.dots :global(li.slick-active) button {
+  background-color: #06b178;
+  padding: 3px;
+  width: 19px;
+}
+
+.dots :global(li.slick-active) {
+  margin: 0 3px;
+}
+
+.dots li button:hover,
+.dots li button:focus {
+  background: #06b178;
+  outline: 0;
+}
+
+.nav_dot_container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-left: 56px;
+  margin-bottom: 10px;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #d6d6d6;
+  margin-right: 2px;
+}
+
+.active_dot {
+  height: 6px;
+  width: 19px;
+  border-radius: 12px;
+  background-color: #06b178;
+  margin-right: 2px;
+}

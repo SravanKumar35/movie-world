@@ -11,7 +11,6 @@ export const useHook = () => {
     );
     setData(results);
     setTotalPages(total_pages);
-    console.log("popular movies", results);
   };
 
   useEffect(() => {

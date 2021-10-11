@@ -4,10 +4,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MovieCard from "../movie-card";
 import styles from "./styles.module.scss";
-import { mobileHook } from "./hooks";
+
+const settings = {
+  dots: true,
+  arrows: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dotsClass: styles.dots,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnDotsHover: true,
+  swipeToSlide: true,
+  arrows: true,
+  touchMove: true,
+};
 
 const MobileView = ({ data }) => {
-  const { customSlider, settings } = mobileHook();
   return (
     <div>
       <Slider {...settings}>

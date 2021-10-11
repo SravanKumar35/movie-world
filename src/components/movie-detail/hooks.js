@@ -5,18 +5,23 @@ import { movieDetailAPI } from "../../api";
 export const movieDetailHook = (id) => {
   const [movie, setMovie] = useState({});
   const router = useRouter();
+
+  // getData is used to get the details of a movie
+  const getData = async (id) => {
+    const { data } = await movieDetailAPI(id);
+    setMovie(data);
+  };
+
+  // this useEffect is called when the page renders
   useEffect(() => {
-    const getData = async (id) => {
-      const { data } = await movieDetailAPI(id);
-      setMovie(data);
-    };
     if (id) {
       getData(id);
     }
   }, []);
+
   const back = () => {
     router.back();
   };
-  console.log(movie);
+
   return { movie, back };
 };

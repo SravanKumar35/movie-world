@@ -6,11 +6,12 @@ export const castHook = (id) => {
 
   const getData = async (id) => {
     const { data: { cast = [] } = {} } = await castAPI(id);
-    console.log("cast", cast);
     setCast(cast);
   };
+
   useEffect(() => {
     if (id) getData(id);
   }, []);
+
   return { cast };
 };

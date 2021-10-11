@@ -8,9 +8,12 @@ import { Star } from "@material-ui/icons";
 import Banner from "./banner";
 import Overview from "./overview";
 import Cast from "./cast";
+import ProductionCompanies from "./production-companies";
 
 const DetailPage = ({ id }) => {
+  // movieDetailHook handles all rhe logic
   const { movie, back } = movieDetailHook(id);
+
   return (
     <div className={styles.main}>
       <div className={styles.header}>
@@ -21,10 +24,12 @@ const DetailPage = ({ id }) => {
         />
         <h2>{movie?.title}</h2>
       </div>
+
       <div className={styles.body}>
         <Banner movie={movie} />
         <Overview movie={movie} />
         <Cast id={id} movie={movie} />
+        <ProductionCompanies data={movie?.production_companies} />
       </div>
     </div>
   );

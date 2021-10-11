@@ -5,7 +5,6 @@ import DetailPage from "../../src/components/movie-detail";
 const MovieDetail = () => {
   const router = useRouter();
   const { id } = router.query;
-  console.log("id", id);
   return (
     <div>
       <DetailPage id={id} key={id} />
