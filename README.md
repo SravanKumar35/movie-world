@@ -9,3 +9,5 @@ Steps tp build the App
 - Clone the App
 - Run `npm i`
 - And finally `npm run dev`
+
+This app is live [here](https://upbeat-montalcini-f3363d.netlify.app/)
