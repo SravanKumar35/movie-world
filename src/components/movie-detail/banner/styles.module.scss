@@ -1,0 +1,22 @@
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+  .poster {
+    width: 180px;
+  }
+  .details {
+    margin-top: 16px;
+    @media only screen and (min-width: 768px) {
+      position: absolute;
+      bottom: 4px;
+      left: 190px;
+      .movie_title {
+        width: 200px;
+      }
+    }
+  }
+}

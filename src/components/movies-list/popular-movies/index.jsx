@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { popularAPI } from "../../../api";
+import { useHook } from "./hooks";
 import PosterCard from "./poster-card";
 import styles from "./styles.module.scss";
+import { Pagination } from "@material-ui/lab";
 
 const PopularMovies = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const getData = async (page) => {
-      const { data: { results = [] } = {} } = await popularAPI(page);
-      setData(results);
-      console.log("popular movies", results);
-    };
-    getData(1);
-  }, []);
+  const { data, totalPages, currentPage, handlePageChange } = useHook();
   return (
     <div className={styles.main}>
-      <span>PopularMovies</span>
+      <h3>PopularMovies</h3>
       <div className={styles.list}>
         {data?.map((movie) => {
           return <PosterCard movie={movie} key={movie?.id} />;
         })}
+      </div>
+      <div className={styles.pagination}>
+        <Pagination
+          variant="outlined"
+          color="secondary"
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,37 @@
+.main {
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 16px;
+    .back_button {
+      cursor: pointer;
+      margin-right: 16px;
+      vertical-align: text-bottom;
+    }
+  }
+  .body {
+    @media screen and (min-width: 768px) {
+      margin-top: 64px;
+      margin-left: 15vw;
+    }
+    margin-left: 32px;
+
+    .banner {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      .poster {
+        width: 180px;
+      }
+      .details {
+        position: absolute;
+        bottom: 4px;
+        left: 190px;
+        .movie_title {
+          width: 200px;
+        }
+      }
+    }
+  }
+}

@@ -1,41 +1,22 @@
 import React from "react";
 import { Rating } from "@material-ui/lab";
-import { makeStyles } from "@material-ui/styles";
 import { Star } from "@material-ui/icons";
-import Link from "next/link";
 import styles from "./styles.module.scss";
+import { base_image_url, languages, useStyles } from "../../../constants";
 
-const base_image_url = "https://image.tmdb.org/t/p/original";
-const useStyles = makeStyles({
-  yellow: {
-    color: "#ffe234",
-  },
-});
-
-const languages = {
-  en: "English",
-  hi: "Hindi",
-  te: "Telugu",
-  ta: "Tamil",
-  pa: "Punjabi",
-  bn: "Bengali",
-  ml: "Malayalam",
-  kn: "Kannada",
-};
-
-const PosterCard = ({ movie }) => {
+const Banner = ({ movie }) => {
   const classess = useStyles();
   return (
-    <Link href={`/${movie?.id}`}>
-      <div className={styles.main}>
-        <img
-          className={styles.poster}
-          src={
-            movie?.poster_path
-              ? `${base_image_url}/${movie?.poster_path}`
-              : "/poster.png"
-          }
-        />
+    <div className={styles.banner}>
+      <img
+        className={styles.poster}
+        src={
+          movie?.poster_path
+            ? `${base_image_url}/${movie?.poster_path}`
+            : "/poster.png"
+        }
+      />
+      <div className={styles.details}>
         <div className={styles.movie_title}>
           <span>{movie?.title}</span>
         </div>
@@ -58,8 +39,8 @@ const PosterCard = ({ movie }) => {
           <span>{movie?.release_date?.slice(0, 4)}</span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
-export default PosterCard;
+export default Banner;

@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from "react";
+import { Pagination } from "@material-ui/lab";
+import React from "react";
 
-import { nowPlayingAPI } from "../../../api";
+import { useHook } from "./hooks";
+import MobileView from "./mobile-version";
 import MovieCard from "./movie-card";
 import styles from "./styles.module.scss";
 
 const CurrentPlaying = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const getData = async (page) => {
-      const { data: { results = [] } = {} } = await nowPlayingAPI(page);
-      console.log("current-playing", results);
-      setData(results);
-    };
-    getData(1);
-  }, []);
-
+  const { data, isMobile, currentPage, handlePageChange, totalPages } =
+    useHook();
+  if (isMobile) {
+    return <MobileView data={data} />;
+  }
   return (
     <div className={styles.main}>
       <div className={styles.list}>
         {data?.map((movie) => {
           return <MovieCard movie={movie} key={movie?.id} />;
         })}
+      </div>
+      <div className={styles.pagination}>
+        <Pagination
+          variant="outlined"
+          color="secondary"
+          count={totalPages}
+          page={currentPage}
+          onChange={handlePageChange}
+        />
       </div>
     </div>
   );

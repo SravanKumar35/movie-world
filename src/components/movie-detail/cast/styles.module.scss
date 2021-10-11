@@ -1,0 +1,9 @@
+.main {
+  @media only screen and (min-width: 768px) {
+    margin-right: 15vw;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

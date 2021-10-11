@@ -9,6 +9,16 @@
     scrollbar-width: none;
   }
 
+  .pagination {
+    margin: 24px 0px;
+    display: flex;
+    justify-content: center;
+    @media only screen and (min-width: 768px) {
+      justify-content: center;
+      margin-left: -10vw;
+    }
+  }
+
   .list::-webkit-scrollbar {
     display: none;
   }

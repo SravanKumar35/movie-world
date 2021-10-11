@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 const Header = () => {
   return (
     <div className={styles.main}>
-      <span>Movie World</span>
+      <h2>Movie World</h2>
     </div>
   );
 };
